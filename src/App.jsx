@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import LoadingScreen from './components/ui/LoadingScreen';
@@ -42,7 +43,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+  <HashRouter>
       <LoadingScreen visible={loading} />
       <Layout>
         <Routes>
@@ -50,6 +51,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+   </HashRouter>
   );
 }
